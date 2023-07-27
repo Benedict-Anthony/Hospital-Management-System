@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Relaxing Lavender Massage Cream",
+    "description": "A soothing massage cream infused with lavender essential oil to relax the body and mind.",
+    "price": 12.99,
+    "image": "relaxing_lavender_massage_cream.jpg",
+    "category": "64bbd28ad3045fe2e092b6cc",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Eucalyptus Massage Cream",
+    "description": "An invigorating massage cream with eucalyptus extracts for a refreshing massage experience.",
+    "price": 9.95,
+    "image": "eucalyptus_massage_cream.jpg",
+    "category": "64bbd28ad3045fe2e092b6cc",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Aloe Vera Cooling Massage Cream",
+    "description": "A cooling massage cream enriched with aloe vera for a soothing and moisturizing massage.",
+    "price": 14.50,
+    "image": "aloe_vera_massage_cream.jpg",
+    "category": "64bbd28ad3045fe2e092b6cc",
+    "expirDate": "2023-08-22"
+  }
+]

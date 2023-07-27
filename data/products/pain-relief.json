@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Paracetamol",
+    "description": "Effective for reducing fever and relieving mild to moderate pain.",
+    "price": 3.99,
+    "image": "paracetamol.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Ibuprofen",
+    "description": "Relieves pain, inflammation, and reduces fever.",
+    "price": 5.75,
+    "image": "ibuprofen.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Naproxen",
+    "description": "Long-lasting pain relief for conditions like arthritis.",
+    "price": 8.50,
+    "image": "naproxen.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Aspirin",
+    "description": "Reduces pain, inflammation, and prevents blood clots.",
+    "price": 4.25,
+    "image": "aspirin.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Diclofenac",
+    "description": "Treats pain, inflammation, and swelling.",
+    "price": 6.99,
+    "image": "diclofenac.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Codeine",
+    "description": "Strong painkiller for moderate to severe pain.",
+    "price": 12.50,
+    "image": "codeine.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Tramadol",
+    "description": "Provides relief from moderate to severe pain.",
+    "price": 9.75,
+    "image": "tramadol.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Morphine",
+    "description": "Potent pain reliever for severe pain.",
+    "price": 15.99,
+    "image": "morphine.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Acetaminophen",
+    "description": "Reduces pain and fever.",
+    "price": 4.50,
+    "image": "acetaminophen.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  },
+  {
+    "name": "Naproxen Sodium",
+    "description": "Effective relief for menstrual pain and inflammation.",
+    "price": 7.25,
+    "image": "naproxen_sodium.jpg",
+    "category": "64c2b59e75bc7b52aa356044",
+    "expirDate": "2023-08-22"
+  }
+]
