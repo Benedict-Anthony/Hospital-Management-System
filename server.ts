@@ -4,8 +4,9 @@ import dotenv from "dotenv"
 import connectdb from "./config/db"
 import morgan from "morgan"
 import errorHandler from "./middleware/errorMiddleware"
-import authRouter from "./routes/auth"
-import productRouter from "./routes/phamacy/store"
+import authRouter from "./routes/user/auth"
+import storeRouter from "./routes/phamacy/store"
+import cookieParser from "cookie-parser"
 
 // LOAD ENVIRONMENT VARIABLES
 dotenv.config({ path: "./config/config.local.env" })
@@ -18,10 +19,11 @@ app.use(morgan("dev"))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
 
 
 app.use("/api/auth", authRouter)
-app.use("/api/pharmacy", productRouter)
+app.use("/api/pharmacy", storeRouter)
 
 
 // ERROR HANDLER

@@ -29,10 +29,10 @@ categoryRouter.get("/", async function (req: Request, res: Response, next: NextF
 })
 
 
-categoryRouter.get("/:name", async function (req: Request, res: Response, next: NextFunction) {
+categoryRouter.get("/:_id", async function (req: Request, res: Response, next: NextFunction) {
     console.log(req.params)
     try {
-        const data = await Category.findOne(req.params).populate("Products")
+        const data = await Category.findById(req.params).populate("Products")
         if (!data) {
             return res.status(404).json({success:false, msg:"Not found"})
         }

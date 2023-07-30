@@ -1,8 +1,8 @@
 import express, { Router, Request, Response, NextFunction} from "express"
-import User from "../models/user/User"
+import User from "../../models/user/User"
 import bcrypts from "bcryptjs"
 import jwt from "jsonwebtoken"
-import { ErrorResponse } from "../utils/errResponse"
+import { ErrorResponse } from "../../utils/errResponse"
 
 const authRouter:Router = express.Router()
 
@@ -43,18 +43,28 @@ authRouter.post("/login", async function (req: Request, res: Response, next: Nex
         return res.status(404).json({ msg: ErrorResponse.message("Email or password incorrect") })
     }
 
-
+ const options = {
+    expires: new Date(
+      Date.now() + 30 * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true
+  };
     const token = {
         access:jwt.sign({
             id: user.id,
             name: `${user.firstName} ${user.lastName}`
-        }, "sacret-key")
+        }, process.env.SECRET_KEY as string)
     }
-
-    return res.status(200).json({success:true, token})
+    
+    return res.status(200).cookie("token", token, options).json({success:true, token})
     
 })
 
-
+authRouter.post("/logout", async function (req: Request, res: Response, next: NextFunction) {
+    res.cookie("token", null, {
+        expires: new Date(Date.now() + 10 * 1000),
+        httpOnly:true
+    }).status(204).json({sucess:true, data:{}})
+})
 
 export default authRouter

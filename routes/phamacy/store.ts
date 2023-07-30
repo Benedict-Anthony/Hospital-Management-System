@@ -1,21 +1,29 @@
-import express, {Router, Response, Request, NextFunction } from "express"
-
+import express, {Router } from "express"
 import categoryRouter from "./category"
-import Products from "../../models/pharmacy/Products"
 import variantRouter from "./variants"
-import { createProduct, getProduct, productList } from "../../controllers/pharmacy/pharm"
+import { createProduct, filterProducts, getProduct, productList } from "../../controllers/pharmacy/pharm"
+import { adminMiddleware } from "../../middleware/adminMiddleware"
+import { protect } from "../../middleware/userMiddleware"
 
-const productRouter: Router = express.Router()
-
-
-productRouter.use("/category", categoryRouter)
-productRouter.use("/variants/", variantRouter)
-
-productRouter.get("store", productList)
+const storeRouter: Router = express.Router()
 
 
-productRouter.get("/:id", getProduct)
+// @ts-ignore
+storeRouter.get("/store", protect, productList)
 
-productRouter.post("/mutate",createProduct)
+// @ts-ignore
+storeRouter.get("/store/detail/:_id", protect, getProduct)
+// @ts-ignore
+storeRouter.get("/store/filter/", protect, filterProducts)
 
-export default productRouter
+// @ts-ignore
+storeRouter.post("/mutate", protect, adminMiddleware, createProduct)
+
+// @ts-ignore
+storeRouter.use("/category", protect, categoryRouter)
+
+// @ts-ignore
+storeRouter.use("/variants/", protect, variantRouter)
+
+
+export default storeRouter

@@ -25,7 +25,10 @@ function errorHandler(error: any, req: Request, res: Response, next: NextFunctio
 
             return res.status(400).json({ msg: "Bad request" })
         case "CastError":
-            return res.status(400).json({msg:ErrorResponse.message(`cannot get the resource`)})
+            return res.status(400).json({ msg: ErrorResponse.message(`cannot get the resource`) })
+        
+        case "JsonWebTokenError":
+            return res.status(401).json({message:"Not authorized, Invalid Token"})
 
         default:
             return next(error)
